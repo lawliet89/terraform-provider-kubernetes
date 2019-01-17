@@ -349,11 +349,11 @@ func testAccKubernetesLimitRangeConfig_basic(name string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_limit_range" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelThree = "three"
       TestLabelFour  = "four"
@@ -385,12 +385,12 @@ func testAccKubernetesLimitRangeConfig_metaModified(name string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_limit_range" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"

@@ -615,12 +615,12 @@ func testAccKubernetesPersistentVolumeConfig_googleCloud_basic(name, diskName, z
 	return fmt.Sprintf(`
 resource "kubernetes_persistent_volume" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -630,7 +630,7 @@ resource "kubernetes_persistent_volume" "test" {
   }
 
   spec {
-    capacity {
+    capacity = {
       storage = "123Gi"
     }
 
@@ -658,12 +658,12 @@ func testAccKubernetesPersistentVolumeConfig_googleCloud_modified(name, diskName
 	return fmt.Sprintf(`
 resource "kubernetes_persistent_volume" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -673,7 +673,7 @@ resource "kubernetes_persistent_volume" "test" {
   }
 
   spec {
-    capacity {
+    capacity = {
       storage = "42Mi"
     }
 
@@ -707,7 +707,7 @@ resource "kubernetes_persistent_volume" "test" {
   }
 
   spec {
-    capacity {
+    capacity = {
       storage = "123Gi"
     }
 
@@ -735,12 +735,12 @@ func testAccKubernetesPersistentVolumeConfig_aws_basic(name, diskName, zone stri
 	return fmt.Sprintf(`
 resource "kubernetes_persistent_volume" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -750,7 +750,7 @@ resource "kubernetes_persistent_volume" "test" {
   }
 
   spec {
-    capacity {
+    capacity = {
       storage = "123Gi"
     }
 
@@ -779,12 +779,12 @@ func testAccKubernetesPersistentVolumeConfig_aws_modified(name, diskName, zone s
 	return fmt.Sprintf(`
 resource "kubernetes_persistent_volume" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -794,7 +794,7 @@ resource "kubernetes_persistent_volume" "test" {
   }
 
   spec {
-    capacity {
+    capacity = {
       storage = "42Mi"
     }
 
@@ -830,7 +830,7 @@ resource "kubernetes_persistent_volume" "test" {
   }
 
   spec {
-    capacity {
+    capacity = {
       storage = "123Gi"
     }
 
@@ -854,7 +854,7 @@ resource "kubernetes_persistent_volume" "test" {
   }
 
   spec {
-    capacity {
+    capacity = {
       storage = "123Gi"
     }
 
@@ -889,7 +889,7 @@ resource "kubernetes_persistent_volume" "test" {
   }
 
   spec {
-    capacity {
+    capacity = {
       storage = "2Gi"
     }
 
@@ -917,7 +917,7 @@ resource "kubernetes_persistent_volume" "test" {
   }
 
   spec {
-    capacity {
+    capacity = {
       storage = "123Gi"
     }
 
@@ -948,7 +948,7 @@ resource "kubernetes_storage_class" "test" {
 
   storage_provisioner = "kubernetes.io/gce-pd"
 
-  parameters {
+  parameters = {
     type = "pd-ssd"
   }
 }
@@ -960,7 +960,7 @@ resource "kubernetes_storage_class" "test2" {
 
   storage_provisioner = "kubernetes.io/gce-pd"
 
-  parameters {
+  parameters = {
     type = "pd-standard"
   }
 }
@@ -974,7 +974,7 @@ resource "kubernetes_persistent_volume" "test" {
     name = "%s"
   }
   spec {
-    capacity {
+    capacity = {
       storage = "2Gi"
     }
     access_modes = ["ReadWriteMany"]

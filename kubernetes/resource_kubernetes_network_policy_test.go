@@ -350,11 +350,11 @@ resource "kubernetes_network_policy" "test" {
     name      = "%s"
     namespace = "default"
 
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelThree = "three"
       TestLabelFour  = "four"
@@ -377,12 +377,12 @@ resource "kubernetes_network_policy" "test" {
     name      = "%s"
     namespace = "default"
 
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"

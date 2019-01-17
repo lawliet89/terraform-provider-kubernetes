@@ -473,12 +473,12 @@ func testAccKubernetesReplicationControllerConfig_basic(name string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_replication_controller" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -498,13 +498,13 @@ resource "kubernetes_replication_controller" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           TestLabelOne   = "one"
           TestLabelTwo   = "two"
           TestLabelThree = "three"
         }
 
-        annotations {
+        annotations = {
           TestAnnotationFive = "five"
         }
       }
@@ -525,12 +525,12 @@ func testAccKubernetesReplicationControllerConfig_initContainer(name string) str
 	return fmt.Sprintf(`
 resource "kubernetes_replication_controller" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -550,7 +550,7 @@ resource "kubernetes_replication_controller" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           TestLabelOne   = "one"
           TestLabelTwo   = "two"
           TestLabelThree = "three"
@@ -600,12 +600,12 @@ func testAccKubernetesReplicationControllerConfig_modified(name string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_replication_controller" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       Different         = "1234"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelThree = "three"
     }
@@ -622,13 +622,13 @@ resource "kubernetes_replication_controller" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           TestLabelOne   = "one"
           TestLabelTwo   = "two"
           TestLabelThree = "three"
         }
 
-        annotations {
+        annotations = {
           TestAnnotationSix = "six"
         }
       }
@@ -649,7 +649,7 @@ func testAccKubernetesReplicationControllerConfig_generatedName(prefix string) s
 	return fmt.Sprintf(`
 resource "kubernetes_replication_controller" "test" {
   metadata {
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -667,7 +667,7 @@ resource "kubernetes_replication_controller" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           TestLabelOne   = "one"
           TestLabelTwo   = "two"
           TestLabelThree = "three"
@@ -692,7 +692,7 @@ resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -704,7 +704,7 @@ resource "kubernetes_replication_controller" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }
@@ -734,7 +734,7 @@ resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -746,7 +746,7 @@ resource "kubernetes_replication_controller" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }
@@ -779,7 +779,7 @@ resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -791,7 +791,7 @@ resource "kubernetes_replication_controller" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }
@@ -830,7 +830,7 @@ resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -842,7 +842,7 @@ resource "kubernetes_replication_controller" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }
@@ -875,7 +875,7 @@ resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -887,7 +887,7 @@ resource "kubernetes_replication_controller" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }
@@ -925,7 +925,7 @@ resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -937,7 +937,7 @@ resource "kubernetes_replication_controller" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }
@@ -979,7 +979,7 @@ resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -991,7 +991,7 @@ resource "kubernetes_replication_controller" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }
@@ -1027,7 +1027,7 @@ resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -1039,7 +1039,7 @@ resource "kubernetes_replication_controller" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }
@@ -1055,7 +1055,7 @@ resource "kubernetes_replication_controller" "test" {
               memory = "512Mi"
             }
 
-            requests {
+            requests = {
               cpu    = "250m"
               memory = "50Mi"
             }
@@ -1074,7 +1074,7 @@ resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -1086,7 +1086,7 @@ resource "kubernetes_replication_controller" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }

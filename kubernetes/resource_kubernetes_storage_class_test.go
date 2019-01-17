@@ -231,12 +231,12 @@ func testAccKubernetesStorageClassConfig_basic(name string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_storage_class" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -249,7 +249,7 @@ resource "kubernetes_storage_class" "test" {
   reclaim_policy      = "Delete"
   volume_binding_mode = "Immediate"
 
-  parameters {
+  parameters = {
     type = "pd-ssd"
   }
 }
@@ -260,12 +260,12 @@ func testAccKubernetesStorageClassConfig_modified(name string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_storage_class" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       Different         = "1234"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelThree = "three"
     }
@@ -277,7 +277,7 @@ resource "kubernetes_storage_class" "test" {
   reclaim_policy      = "Retain"
   volume_binding_mode = "WaitForFirstConsumer"
 
-  parameters {
+  parameters = {
     type  = "pd-standard"
     zones = "us-west1-a,us-west1-b"
   }

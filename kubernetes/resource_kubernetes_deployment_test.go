@@ -510,12 +510,12 @@ func testAccKubernetesDeploymentConfig_basic(name string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_deployment" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -537,7 +537,7 @@ resource "kubernetes_deployment" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           TestLabelOne   = "one"
           TestLabelTwo   = "two"
           TestLabelThree = "three"
@@ -550,7 +550,7 @@ resource "kubernetes_deployment" "test" {
           name  = "tf-acc-test"
 
           resources {
-            requests {
+            requests = {
               memory = "64Mi"
               cpu    = "50m"
             }
@@ -567,12 +567,12 @@ func testAccKubernetesDeploymentConfig_initContainer(name string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_deployment" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -594,7 +594,7 @@ resource "kubernetes_deployment" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           TestLabelOne   = "one"
           TestLabelTwo   = "two"
           TestLabelThree = "three"
@@ -611,7 +611,7 @@ resource "kubernetes_deployment" "test" {
           }
 
           resources {
-            requests {
+            requests = {
               memory = "64Mi"
               cpu    = "50m"
             }
@@ -629,7 +629,7 @@ resource "kubernetes_deployment" "test" {
           command = ["wget", "-O", "/work-dir/index.html", "http://kubernetes.io"]
 
           resources {
-            requests {
+            requests = {
               memory = "64Mi"
               cpu    = "50m"
             }
@@ -658,12 +658,12 @@ func testAccKubernetesDeploymentConfig_modified(name string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_deployment" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       Different         = "1234"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelThree = "three"
     }
@@ -682,7 +682,7 @@ resource "kubernetes_deployment" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           TestLabelOne   = "one"
           TestLabelTwo   = "two"
           TestLabelThree = "three"
@@ -705,7 +705,7 @@ func testAccKubernetesDeploymentConfig_generatedName(prefix string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_deployment" "test" {
   metadata {
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -725,7 +725,7 @@ resource "kubernetes_deployment" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           TestLabelOne   = "one"
           TestLabelTwo   = "two"
           TestLabelThree = "three"
@@ -750,7 +750,7 @@ resource "kubernetes_deployment" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -764,7 +764,7 @@ resource "kubernetes_deployment" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }
@@ -794,7 +794,7 @@ resource "kubernetes_deployment" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -808,7 +808,7 @@ resource "kubernetes_deployment" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }
@@ -841,7 +841,7 @@ resource "kubernetes_deployment" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -855,7 +855,7 @@ resource "kubernetes_deployment" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }
@@ -894,7 +894,7 @@ resource "kubernetes_deployment" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -908,7 +908,7 @@ resource "kubernetes_deployment" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }
@@ -941,7 +941,7 @@ resource "kubernetes_deployment" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -955,7 +955,7 @@ resource "kubernetes_deployment" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }
@@ -993,7 +993,7 @@ resource "kubernetes_deployment" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -1007,7 +1007,7 @@ resource "kubernetes_deployment" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }
@@ -1073,7 +1073,7 @@ resource "kubernetes_deployment" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -1087,7 +1087,7 @@ resource "kubernetes_deployment" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }
@@ -1123,7 +1123,7 @@ resource "kubernetes_deployment" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -1137,7 +1137,7 @@ resource "kubernetes_deployment" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }
@@ -1153,7 +1153,7 @@ resource "kubernetes_deployment" "test" {
               memory = "512Mi"
             }
 
-            requests {
+            requests = {
               cpu    = "250m"
               memory = "50Mi"
             }
@@ -1172,7 +1172,7 @@ resource "kubernetes_deployment" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -1186,7 +1186,7 @@ resource "kubernetes_deployment" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           Test = "TfAcceptanceTest"
         }
       }

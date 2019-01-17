@@ -333,12 +333,12 @@ func testAccKubernetesSecretConfig_emptyData(name string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_secret" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -356,12 +356,12 @@ func testAccKubernetesSecretConfig_basic(name string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_secret" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -382,12 +382,12 @@ func testAccKubernetesSecretConfig_modified(name string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_secret" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       Different         = "1234"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelThree = "three"
     }

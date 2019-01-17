@@ -514,12 +514,12 @@ func testAccKubernetesServiceConfig_basic(name string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_service" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -542,12 +542,12 @@ func testAccKubernetesServiceConfig_modified(name string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_service" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       Different         = "1234"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelThree = "three"
     }
@@ -668,7 +668,7 @@ resource "kubernetes_service" "test" {
   metadata {
     name = "%s"
 
-    labels {
+    labels = {
       app  = "helloweb"
       tier = "frontend"
     }

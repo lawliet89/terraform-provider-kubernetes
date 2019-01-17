@@ -697,7 +697,7 @@ resource "kubernetes_config_map" "test_from" {
 
 resource "kubernetes_pod" "test" {
   metadata {
-    labels {
+    labels = {
       app = "pod_label"
     }
 
@@ -766,7 +766,7 @@ func testAccKubernetesPodConfigWithInitContainer(podName string, image string) s
 	return fmt.Sprintf(`
 resource "kubernetes_pod" "test" {
   metadata {
-    labels {
+    labels = {
       app = "pod_label"
     }
 
@@ -814,7 +814,7 @@ func testAccKubernetesPodConfigWithSecurityContext(podName, imageName string) st
 	return fmt.Sprintf(`
 resource "kubernetes_pod" "test" {
   metadata {
-    labels {
+    labels = {
       app = "pod_label"
     }
 
@@ -842,7 +842,7 @@ func testAccKubernetesPodConfigWithLivenessProbeUsingExec(podName, imageName str
 	return fmt.Sprintf(`
 resource "kubernetes_pod" "test" {
   metadata {
-    labels {
+    labels = {
       app = "pod_label"
     }
 
@@ -873,7 +873,7 @@ func testAccKubernetesPodConfigWithLivenessProbeUsingHTTPGet(podName, imageName 
 	return fmt.Sprintf(`
 resource "kubernetes_pod" "test" {
   metadata {
-    labels {
+    labels = {
       app = "pod_label"
     }
 
@@ -910,7 +910,7 @@ func testAccKubernetesPodConfigWithLivenessProbeUsingTCP(podName, imageName stri
 	return fmt.Sprintf(`
 resource "kubernetes_pod" "test" {
   metadata {
-    labels {
+    labels = {
       app = "pod_label"
     }
 
@@ -941,7 +941,7 @@ func testAccKubernetesPodConfigWithLifeCycle(podName, imageName string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_pod" "test" {
   metadata {
-    labels {
+    labels = {
       app = "pod_label"
     }
 
@@ -977,7 +977,7 @@ func testAccKubernetesPodConfigWithContainerSecurityContext(podName, imageName s
 	return fmt.Sprintf(`
 resource "kubernetes_pod" "test" {
   metadata {
-    labels {
+    labels = {
       app = "pod_label"
     }
 
@@ -1021,7 +1021,7 @@ resource "kubernetes_secret" "test" {
 
 resource "kubernetes_pod" "test" {
   metadata {
-    labels {
+    labels = {
       app = "pod_label"
     }
 
@@ -1065,7 +1065,7 @@ resource "kubernetes_secret" "test" {
 
 resource "kubernetes_pod" "test" {
   metadata {
-    labels {
+    labels = {
       app = "pod_label"
     }
 
@@ -1114,7 +1114,7 @@ resource "kubernetes_config_map" "test" {
 
 resource "kubernetes_pod" "test" {
   metadata {
-    labels {
+    labels = {
       app = "pod_label"
     }
 
@@ -1176,7 +1176,7 @@ func testAccKubernetesPodConfigWithResourceRequirements(podName, imageName strin
 	return fmt.Sprintf(`
 resource "kubernetes_pod" "test" {
   metadata {
-    labels {
+    labels = {
       app = "pod_label"
     }
 
@@ -1194,7 +1194,7 @@ resource "kubernetes_pod" "test" {
           memory = "512Mi"
         }
 
-        requests {
+        requests = {
           cpu    = "250m"
           memory = "50Mi"
         }
@@ -1209,7 +1209,7 @@ func testAccKubernetesPodConfigWithEmptyDirVolumes(podName, imageName string) st
 	return fmt.Sprintf(`
 resource "kubernetes_pod" "test" {
   metadata {
-    labels {
+    labels = {
       app = "pod_label"
     }
 

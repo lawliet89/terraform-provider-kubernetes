@@ -416,12 +416,12 @@ func testAccKubernetesReplicationControllerConfig_deprecated_basic(name string) 
 	return fmt.Sprintf(`
 resource "kubernetes_replication_controller" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -454,11 +454,11 @@ func testAccKubernetesReplicationControllerConfig_deprecated_initContainer(name 
 	return fmt.Sprintf(`
 resource "kubernetes_replication_controller" "test" {
 	metadata {
-		annotations {
+		annotations = {
 			TestAnnotationOne = "one"
 			TestAnnotationTwo = "two"
 		}
-		labels {
+		labels = {
 			TestLabelOne = "one"
 			TestLabelTwo = "two"
 			TestLabelThree = "three"
@@ -507,11 +507,11 @@ func testAccKubernetesReplicationControllerConfig_deprecated_modified(name strin
 	return fmt.Sprintf(`
 resource "kubernetes_replication_controller" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       Different = "1234"
     }
-    labels {
+    labels = {
       TestLabelOne = "one"
       TestLabelThree = "three"
     }
@@ -537,7 +537,7 @@ func testAccKubernetesReplicationControllerConfig_deprecated_generatedName(prefi
 	return fmt.Sprintf(`
 resource "kubernetes_replication_controller" "test" {
   metadata {
-    labels {
+    labels = {
       TestLabelOne = "one"
       TestLabelTwo = "two"
       TestLabelThree = "three"
@@ -565,7 +565,7 @@ func testAccKubernetesReplicationControllerConfig_deprecated_WithSecurityContext
 resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -595,7 +595,7 @@ func testAccKubernetesReplicationControllerConfig_deprecated_WithLivenessProbeUs
 resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -629,7 +629,7 @@ func testAccKubernetesReplicationControllerConfig_deprecated_WithLivenessProbeUs
 resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -668,7 +668,7 @@ func testAccKubernetesReplicationControllerConfig_deprecated_WithLivenessProbeUs
 resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -702,7 +702,7 @@ func testAccKubernetesReplicationControllerConfig_deprecated_WithLifeCycle(rcNam
 resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -741,7 +741,7 @@ func testAccKubernetesReplicationControllerConfig_deprecated_WithContainerSecuri
 resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -785,7 +785,7 @@ resource "kubernetes_secret" "test" {
 resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -820,7 +820,7 @@ func testAccKubernetesReplicationControllerConfig_deprecated_WithResourceRequire
 resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }
@@ -856,7 +856,7 @@ func testAccKubernetesReplicationControllerConfig_deprecated_WithEmptyDirVolumes
 resource "kubernetes_replication_controller" "test" {
   metadata {
     name = "%s"
-    labels {
+    labels = {
       Test = "TfAcceptanceTest"
     }
   }

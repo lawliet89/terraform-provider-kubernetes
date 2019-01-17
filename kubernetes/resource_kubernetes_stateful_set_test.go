@@ -360,12 +360,12 @@ func testAccKubernetesStatefulSetConfigBasic(name string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_stateful_set" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -389,7 +389,7 @@ resource "kubernetes_stateful_set" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           app = "ss-test"
         }
       }
@@ -429,7 +429,7 @@ resource "kubernetes_stateful_set" "test" {
         access_modes = ["ReadWriteOnce"]
 
         resources {
-          requests {
+          requests = {
             storage = "1Gi"
           }
         }
@@ -444,12 +444,12 @@ func testAccKubernetesStatefulSetConfigUpdateImage(name string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_stateful_set" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -473,7 +473,7 @@ resource "kubernetes_stateful_set" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           app = "ss-test"
         }
       }
@@ -513,7 +513,7 @@ resource "kubernetes_stateful_set" "test" {
         access_modes = ["ReadWriteOnce"]
 
         resources {
-          requests {
+          requests = {
             storage = "1Gi"
           }
         }
@@ -528,12 +528,12 @@ func testAccKubernetesStatefulSetConfigUpdatedSelectorLabels(name string) string
 	return fmt.Sprintf(`
 resource "kubernetes_stateful_set" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -558,7 +558,7 @@ resource "kubernetes_stateful_set" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           app   = "ss-test"
           layer = "ss-test-layer"
         }
@@ -599,7 +599,7 @@ resource "kubernetes_stateful_set" "test" {
         access_modes = ["ReadWriteOnce"]
 
         resources {
-          requests {
+          requests = {
             storage = "1Gi"
           }
         }
@@ -614,12 +614,12 @@ func testAccKubernetesStatefulSetConfigUpdateReplicas(name string) string {
 	return fmt.Sprintf(`
 resource "kubernetes_stateful_set" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -643,7 +643,7 @@ resource "kubernetes_stateful_set" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           app = "ss-test"
         }
       }
@@ -683,7 +683,7 @@ resource "kubernetes_stateful_set" "test" {
         access_modes = ["ReadWriteOnce"]
 
         resources {
-          requests {
+          requests = {
             storage = "1Gi"
           }
         }
@@ -698,12 +698,12 @@ func testAccKubernetesStatefulSetConfigUpdateTemplateContainerPort(name string) 
 	return fmt.Sprintf(`
 resource "kubernetes_stateful_set" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -727,7 +727,7 @@ resource "kubernetes_stateful_set" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           app = "ss-test"
         }
       }
@@ -772,7 +772,7 @@ resource "kubernetes_stateful_set" "test" {
         access_modes = ["ReadWriteOnce"]
 
         resources {
-          requests {
+          requests = {
             storage = "1Gi"
           }
         }
@@ -787,12 +787,12 @@ func testAccKubernetesStatefulSetConfigRollingUpdatePartition(name string) strin
 	return fmt.Sprintf(`
 resource "kubernetes_stateful_set" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -816,7 +816,7 @@ resource "kubernetes_stateful_set" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           app = "ss-test"
         }
       }
@@ -856,7 +856,7 @@ resource "kubernetes_stateful_set" "test" {
         access_modes = ["ReadWriteOnce"]
 
         resources {
-          requests {
+          requests = {
             storage = "1Gi"
           }
         }
@@ -871,12 +871,12 @@ func testAccKubernetesStatefulSetConfigUpdateStrategyOnDelete(name string) strin
 	return fmt.Sprintf(`
 resource "kubernetes_stateful_set" "test" {
   metadata {
-    annotations {
+    annotations = {
       TestAnnotationOne = "one"
       TestAnnotationTwo = "two"
     }
 
-    labels {
+    labels = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -900,7 +900,7 @@ resource "kubernetes_stateful_set" "test" {
 
     template {
       metadata {
-        labels {
+        labels = {
           app = "ss-test"
         }
       }
@@ -936,7 +936,7 @@ resource "kubernetes_stateful_set" "test" {
         access_modes = ["ReadWriteOnce"]
 
         resources {
-          requests {
+          requests = {
             storage = "1Gi"
           }
         }
