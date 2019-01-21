@@ -5,6 +5,7 @@ import (
 	"log"
 	"time"
 
+	"github.com/davecgh/go-spew/spew"
 	"github.com/hashicorp/terraform/helper/resource"
 	"github.com/hashicorp/terraform/helper/schema"
 	api "k8s.io/api/core/v1"
@@ -27,6 +28,14 @@ func resourceKubernetesNamespace() *schema.Resource {
 
 		Schema: map[string]*schema.Schema{
 			"metadata": metadataSchema("namespace", true),
+			"status": {
+				Type:        schema.TypeSet,
+				Description: "Dummy status, for testing",
+				Optional:    true,
+				Computed:    true,
+				Elem:        &schema.Schema{Type: schema.TypeString},
+				Set:         schema.HashString,
+			},
 		},
 	}
 }
@@ -34,7 +43,9 @@ func resourceKubernetesNamespace() *schema.Resource {
 func resourceKubernetesNamespaceCreate(d *schema.ResourceData, meta interface{}) error {
 	conn := meta.(*kubernetes.Clientset)
 
-	metadata := expandMetadata(d.Get("metadata").([]interface{}))
+	m := d.Get("metadata")
+	log.Printf("[DEBUG][ALEX] %s", spew.Sprint(m))
+	metadata := expandMetadata(m.(*schema.Set).List())
 	namespace := api.Namespace{
 		ObjectMeta: metadata,
 	}
