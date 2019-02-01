@@ -337,7 +337,16 @@ resource "kubernetes_namespace" "test" {
 
 func testAccKubernetesNamespaceConfig_addAnnotations(nsName string) string {
 	return fmt.Sprintf(`
-	testAccKubernetesNamespaceConfig_addAnnotations
+resource "kubernetes_namespace" "test" {
+  metadata {
+    annotations {
+		annotations {
+      TestAnnotationOne = "one"
+      TestAnnotationTwo = "two"
+    }
+    name = "%s"
+  }
+}
 `, nsName)
 }
 func testAccKubernetesNamespaceConfig_addLabels(nsName string) string {
