@@ -380,7 +380,7 @@ resource "kubernetes_stateful_set" "test" {
     revision_history_limit = 11
 
     selector {
-      match_labels {
+      match_labels = {
         app = "ss-test"
       }
     }
@@ -464,7 +464,7 @@ resource "kubernetes_stateful_set" "test" {
     revision_history_limit = 11
 
     selector {
-      match_labels {
+      match_labels = {
         app = "ss-test"
       }
     }
@@ -548,7 +548,7 @@ resource "kubernetes_stateful_set" "test" {
     revision_history_limit = 11
 
     selector {
-      match_labels {
+      match_labels = {
         app   = "ss-test"
         layer = "ss-test-layer"
       }
@@ -634,7 +634,7 @@ resource "kubernetes_stateful_set" "test" {
     revision_history_limit = 11
 
     selector {
-      match_labels {
+      match_labels ={
         app = "ss-test"
       }
     }
@@ -718,7 +718,7 @@ resource "kubernetes_stateful_set" "test" {
     revision_history_limit = 11
 
     selector {
-      match_labels {
+      match_labels = {
         app = "ss-test"
       }
     }
@@ -807,7 +807,7 @@ resource "kubernetes_stateful_set" "test" {
     revision_history_limit = 11
 
     selector {
-      match_labels {
+      match_labels = {
         app = "ss-test"
       }
     }
@@ -891,7 +891,7 @@ resource "kubernetes_stateful_set" "test" {
     revision_history_limit = 11
 
     selector {
-      match_labels {
+      match_labels = {
         app = "ss-test"
       }
     }

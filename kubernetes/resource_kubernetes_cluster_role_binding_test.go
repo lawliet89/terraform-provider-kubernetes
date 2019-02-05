@@ -138,7 +138,7 @@ resource "kubernetes_cluster_role_binding" "test" {
     name = "%s"
   }
 
-  role_ref {
+  role_ref = {
     api_group = "rbac.authorization.k8s.io"
     kind      = "ClusterRole"
     name      = "cluster-admin"
@@ -160,7 +160,7 @@ resource "kubernetes_cluster_role_binding" "test" {
     name = "%s"
   }
 
-  role_ref {
+	role_ref = {
     api_group = "rbac.authorization.k8s.io"
     kind      = "ClusterRole"
     name      = "cluster-admin"

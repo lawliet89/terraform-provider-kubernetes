@@ -528,7 +528,7 @@ resource "kubernetes_deployment" "test" {
     replicas = 100 # This is intentionally high to exercise the waiter
 
     selector {
-      match_labels {
+      match_labels = {
         TestLabelOne   = "one"
         TestLabelTwo   = "two"
         TestLabelThree = "three"
@@ -585,7 +585,7 @@ resource "kubernetes_deployment" "test" {
     replicas = 100 # This is intentionally high to exercise the waiter
 
     selector {
-      match_labels {
+      match_labels = {
         TestLabelOne   = "one"
         TestLabelTwo   = "two"
         TestLabelThree = "three"
@@ -673,7 +673,7 @@ resource "kubernetes_deployment" "test" {
 
   spec {
     selector {
-      match_labels {
+      match_labels = {
         TestLabelOne   = "one"
         TestLabelTwo   = "two"
         TestLabelThree = "three"
@@ -716,7 +716,7 @@ resource "kubernetes_deployment" "test" {
 
   spec {
     selector {
-      match_labels {
+      match_labels = {
         TestLabelOne   = "one"
         TestLabelTwo   = "two"
         TestLabelThree = "three"
@@ -757,7 +757,7 @@ resource "kubernetes_deployment" "test" {
 
   spec {
     selector {
-      match_labels {
+      match_labels = {
         Test = "TfAcceptanceTest"
       }
     }
@@ -801,7 +801,7 @@ resource "kubernetes_deployment" "test" {
 
   spec {
     selector {
-      match_labels {
+      match_labels = {
         Test = "TfAcceptanceTest"
       }
     }
@@ -848,7 +848,7 @@ resource "kubernetes_deployment" "test" {
 
   spec {
     selector {
-      match_labels {
+      match_labels = {
         Test = "TfAcceptanceTest"
       }
     }
@@ -901,7 +901,7 @@ resource "kubernetes_deployment" "test" {
 
   spec {
     selector {
-      match_labels {
+      match_labels = {
         Test = "TfAcceptanceTest"
       }
     }
@@ -948,7 +948,7 @@ resource "kubernetes_deployment" "test" {
 
   spec {
     selector {
-      match_labels {
+      match_labels = {
         Test = "TfAcceptanceTest"
       }
     }
@@ -1000,7 +1000,7 @@ resource "kubernetes_deployment" "test" {
 
   spec {
     selector {
-      match_labels {
+      match_labels = {
         Test = "TfAcceptanceTest"
       }
     }
@@ -1080,7 +1080,7 @@ resource "kubernetes_deployment" "test" {
 
   spec {
     selector {
-      match_labels {
+      match_labels = {
         Test = "TfAcceptanceTest"
       }
     }
@@ -1130,7 +1130,7 @@ resource "kubernetes_deployment" "test" {
 
   spec {
     selector {
-      match_labels {
+      match_labels = {
         Test = "TfAcceptanceTest"
       }
     }
@@ -1179,7 +1179,7 @@ resource "kubernetes_deployment" "test" {
 
   spec {
     selector {
-      match_labels {
+      match_labels = {
         Test = "TfAcceptanceTest"
       }
     }

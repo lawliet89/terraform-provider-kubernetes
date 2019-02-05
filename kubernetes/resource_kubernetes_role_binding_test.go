@@ -2,13 +2,14 @@ package kubernetes
 
 import (
 	"fmt"
+	"testing"
+
 	"github.com/hashicorp/terraform/helper/acctest"
 	"github.com/hashicorp/terraform/helper/resource"
 	"github.com/hashicorp/terraform/terraform"
 	api "k8s.io/api/rbac/v1"
 	meta_v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
-	"testing"
 )
 
 func TestAccKubernetesRoleBinding_basic(t *testing.T) {
@@ -147,7 +148,7 @@ resource "kubernetes_role_binding" "test" {
     name = "%s"
   }
 
-  role_ref {
+  role_ref = {
     api_group = "rbac.authorization.k8s.io"
     kind      = "Role"
     name      = "admin"
@@ -169,7 +170,7 @@ resource "kubernetes_role_binding" "test" {
     name = "%s"
   }
 
-  role_ref {
+  role_ref = {
     api_group = "rbac.authorization.k8s.io"
     kind      = "Role"
     name      = "admin"
