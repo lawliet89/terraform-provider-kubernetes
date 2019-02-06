@@ -347,7 +347,7 @@ resource "kubernetes_secret" "test" {
     name = "%s"
   }
 
-  data {}
+  data = {}
 }
 `, name)
 }
@@ -370,7 +370,7 @@ resource "kubernetes_secret" "test" {
     name = "%s"
   }
 
-  data {
+  data = {
     one = "first"
     two = "second"
   }
@@ -395,7 +395,7 @@ resource "kubernetes_secret" "test" {
     name = "%s"
   }
 
-  data {
+  data = {
     one  = "first"
     two  = "second"
     nine = "ninth"
@@ -421,7 +421,7 @@ resource "kubernetes_secret" "test" {
     name = "%s"
   }
 
-  data {
+  data = {
     username = "admin"
     password = "password"
   }
@@ -438,7 +438,7 @@ resource "kubernetes_secret" "test" {
     generate_name = "%s"
   }
 
-  data {
+  data = {
     one = "first"
     two = "second"
   }
@@ -453,7 +453,7 @@ resource "kubernetes_secret" "test" {
     generate_name = "%s"
   }
 
-  data {
+  data = {
     one = "${file("./test-fixtures/binary.data")}"
   }
 }
@@ -467,7 +467,7 @@ resource "kubernetes_secret" "test" {
     generate_name = "%s"
   }
 
-  data {
+  data = {
     one = "${file("./test-fixtures/binary2.data")}"
     two = "${file("./test-fixtures/binary.data")}"
   }

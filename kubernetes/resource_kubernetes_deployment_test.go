@@ -550,7 +550,7 @@ resource "kubernetes_deployment" "test" {
           name  = "tf-acc-test"
 
           resources {
-            requests = {
+            requests {
               memory = "64Mi"
               cpu    = "50m"
             }
@@ -611,7 +611,7 @@ resource "kubernetes_deployment" "test" {
           }
 
           resources {
-            requests = {
+            requests {
               memory = "64Mi"
               cpu    = "50m"
             }
@@ -629,7 +629,7 @@ resource "kubernetes_deployment" "test" {
           command = ["wget", "-O", "/work-dir/index.html", "http://kubernetes.io"]
 
           resources {
-            requests = {
+            requests {
               memory = "64Mi"
               cpu    = "50m"
             }
@@ -645,7 +645,7 @@ resource "kubernetes_deployment" "test" {
 
         volume {
           name      = "workdir"
-          empty_dir = {}
+          empty_dir {}
         }
       }
     }
@@ -1064,7 +1064,7 @@ resource "kubernetes_secret" "test" {
     name = "%s"
   }
 
-  data {
+  data = {
     one = "first"
   }
 }
@@ -1106,7 +1106,7 @@ resource "kubernetes_deployment" "test" {
         volume {
           name = "db"
 
-          secret = {
+          secret {
             secret_name = "${kubernetes_secret.test.metadata.0.name}"
           }
         }
@@ -1153,7 +1153,7 @@ resource "kubernetes_deployment" "test" {
               memory = "512Mi"
             }
 
-            requests = {
+            requests {
               cpu    = "250m"
               memory = "50Mi"
             }
@@ -1205,7 +1205,7 @@ resource "kubernetes_deployment" "test" {
         volume {
           name = "cache-volume"
 
-          empty_dir = {
+          empty_dir {
             medium = "Memory"
           }
         }
