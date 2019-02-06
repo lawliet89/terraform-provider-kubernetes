@@ -15,7 +15,7 @@ require (
 	github.com/agl/ed25519 v0.0.0-20170116200512-5312a6153412 // indirect
 	github.com/antchfx/xpath v0.0.0-20190129040759-c8489ed3251e // indirect
 	github.com/antchfx/xquery v0.0.0-20180515051857-ad5b8c7a47b0 // indirect
-	github.com/aws/aws-sdk-go v1.16.26 // indirect
+	github.com/aws/aws-sdk-go v1.16.28 // indirect
 	github.com/beevik/etree v1.1.0 // indirect
 	github.com/cheggaaa/pb v2.0.6+incompatible // indirect
 	github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e // indirect
@@ -34,7 +34,7 @@ require (
 	github.com/google/pprof v0.0.0-20190109223431-e84dfd68c163 // indirect
 	github.com/googleapis/gax-go v2.0.2+incompatible // indirect
 	github.com/googleapis/gnostic v0.2.0 // indirect
-	github.com/gophercloud/gophercloud v0.0.0-20190204021847-a2b0ad6ce68c // indirect
+	github.com/gophercloud/gophercloud v0.0.0-20190206021053-df38e1611dbe // indirect
 	github.com/gophercloud/utils v0.0.0-20190128072930-fbb6ab446f01 // indirect
 	github.com/gopherjs/gopherjs v0.0.0-20181103185306-d547d1d9531e // indirect
 	github.com/gorilla/mux v1.7.0 // indirect
@@ -51,7 +51,7 @@ require (
 	github.com/hashicorp/go-version v1.1.0
 	github.com/hashicorp/hil v0.0.0-20190129155652-59d7c1fee952 // indirect
 	github.com/hashicorp/serf v0.8.2 // indirect
-	github.com/hashicorp/terraform v0.12.0-alpha4.0.20190202012054-d1daa7e5187d
+	github.com/hashicorp/terraform v0.12.0-alpha4.0.20190206140638-5946fd898e77
 	github.com/hashicorp/vault v1.0.2 // indirect
 	github.com/hashicorp/yamux v0.0.0-20181012175058-2f1d1f20f75d // indirect
 	github.com/imdario/mergo v0.3.6 // indirect
@@ -110,14 +110,14 @@ require (
 	github.com/xlab/treeprint v0.0.0-20181112141820-a009c3971eca // indirect
 	go.opencensus.io v0.19.0 // indirect
 	go4.org v0.0.0-20181109185143-00e24f1b2599 // indirect
-	golang.org/x/build v0.0.0-20190201181641-63986c177d1f // indirect
+	golang.org/x/build v0.0.0-20190206002922-e21a90b64ba0 // indirect
 	golang.org/x/crypto v0.0.0-20190131182504-b8fe1690c613 // indirect
 	golang.org/x/exp v0.0.0-20190125153040-c74c464bbbf2 // indirect
 	golang.org/x/net v0.0.0-20190125091013-d26f9f9a57f3 // indirect
 	golang.org/x/oauth2 v0.0.0-20190130055435-99b60b757ec1 // indirect
 	golang.org/x/perf v0.0.0-20190124201629-844a5f5b46f4 // indirect
-	golang.org/x/sys v0.0.0-20190204103248-980327fe3c65 // indirect
-	golang.org/x/tools v0.0.0-20190202235157-7414d4c1f71c // indirect
+	golang.org/x/sys v0.0.0-20190204203706-41f3e6584952 // indirect
+	golang.org/x/tools v0.0.0-20190206041539-40960b6deb8e // indirect
 	google.golang.org/genproto v0.0.0-20190201180003-4b09977fb922 // indirect
 	google.golang.org/grpc v1.18.0 // indirect
 	gopkg.in/VividCortex/ewma.v1 v1.1.1 // indirect
