@@ -1,12 +1,12 @@
 module github.com/terraform-providers/terraform-provider-kubernetes
 
 require (
-	cloud.google.com/go v0.35.1 // indirect
+	cloud.google.com/go v0.36.0 // indirect
 	contrib.go.opencensus.io/exporter/ocagent v0.4.1 // indirect
 	dmitri.shuralyov.com/app/changes v0.0.0-20181114035150-5af16e21babb // indirect
 	dmitri.shuralyov.com/service/change v0.0.0-20190203163610-217368fe4577 // indirect
 	git.apache.org/thrift.git v0.12.0 // indirect
-	github.com/Azure/azure-sdk-for-go v25.0.0+incompatible // indirect
+	github.com/Azure/azure-sdk-for-go v25.1.0+incompatible // indirect
 	github.com/Azure/go-autorest v11.4.0+incompatible // indirect
 	github.com/Azure/go-ntlmssp v0.0.0-20180810175552-4a21cbd618b4 // indirect
 	github.com/ChrisTrenkamp/goxpath v0.0.0-20170922090931-c385f95c6022 // indirect
@@ -34,7 +34,7 @@ require (
 	github.com/google/pprof v0.0.0-20190109223431-e84dfd68c163 // indirect
 	github.com/googleapis/gax-go v2.0.2+incompatible // indirect
 	github.com/googleapis/gnostic v0.2.0 // indirect
-	github.com/gophercloud/gophercloud v0.0.0-20190206021053-df38e1611dbe // indirect
+	github.com/gophercloud/gophercloud v0.0.0-20190206201033-83b528acebb4 // indirect
 	github.com/gophercloud/utils v0.0.0-20190128072930-fbb6ab446f01 // indirect
 	github.com/gopherjs/gopherjs v0.0.0-20181103185306-d547d1d9531e // indirect
 	github.com/gorilla/mux v1.7.0 // indirect
@@ -51,7 +51,7 @@ require (
 	github.com/hashicorp/go-version v1.1.0
 	github.com/hashicorp/hil v0.0.0-20190129155652-59d7c1fee952 // indirect
 	github.com/hashicorp/serf v0.8.2 // indirect
-	github.com/hashicorp/terraform v0.12.0-alpha4.0.20190206140638-5946fd898e77
+	github.com/hashicorp/terraform v0.12.0-alpha4.0.20190206204732-8a964a4bc447
 	github.com/hashicorp/vault v1.0.2 // indirect
 	github.com/hashicorp/yamux v0.0.0-20181012175058-2f1d1f20f75d // indirect
 	github.com/imdario/mergo v0.3.6 // indirect
@@ -101,7 +101,7 @@ require (
 	github.com/stoewer/go-strcase v1.0.2 // indirect
 	github.com/terraform-providers/terraform-provider-aws v1.57.0
 	github.com/terraform-providers/terraform-provider-google v1.20.0
-	github.com/terraform-providers/terraform-provider-openstack v1.14.0 // indirect
+	github.com/terraform-providers/terraform-provider-openstack v1.15.0 // indirect
 	github.com/terraform-providers/terraform-provider-random v2.0.0+incompatible // indirect
 	github.com/tmc/grpc-websocket-proxy v0.0.0-20190109142713-0ad062ec5ee5 // indirect
 	github.com/ugorji/go/codec v0.0.0-20190128213124-ee1426cffec0 // indirect
@@ -110,15 +110,14 @@ require (
 	github.com/xlab/treeprint v0.0.0-20181112141820-a009c3971eca // indirect
 	go.opencensus.io v0.19.0 // indirect
 	go4.org v0.0.0-20181109185143-00e24f1b2599 // indirect
-	golang.org/x/build v0.0.0-20190206002922-e21a90b64ba0 // indirect
+	golang.org/x/build v0.0.0-20190206185221-ca70795ae665 // indirect
 	golang.org/x/crypto v0.0.0-20190131182504-b8fe1690c613 // indirect
 	golang.org/x/exp v0.0.0-20190125153040-c74c464bbbf2 // indirect
-	golang.org/x/net v0.0.0-20190125091013-d26f9f9a57f3 // indirect
+	golang.org/x/net v0.0.0-20190206173232-65e2d4e15006 // indirect
 	golang.org/x/oauth2 v0.0.0-20190130055435-99b60b757ec1 // indirect
 	golang.org/x/perf v0.0.0-20190124201629-844a5f5b46f4 // indirect
 	golang.org/x/sys v0.0.0-20190204203706-41f3e6584952 // indirect
-	golang.org/x/tools v0.0.0-20190206041539-40960b6deb8e // indirect
-	google.golang.org/genproto v0.0.0-20190201180003-4b09977fb922 // indirect
+	golang.org/x/tools v0.0.0-20190206221403-44bcb96178d3 // indirect
 	google.golang.org/grpc v1.18.0 // indirect
 	gopkg.in/VividCortex/ewma.v1 v1.1.1 // indirect
 	gopkg.in/cheggaaa/pb.v2 v2.0.6 // indirect
