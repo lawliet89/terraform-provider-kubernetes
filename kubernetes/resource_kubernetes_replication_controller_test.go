@@ -490,7 +490,7 @@ resource "kubernetes_replication_controller" "test" {
   spec {
     replicas = 1000 # This is intentionally high to exercise the waiter
 
-    selector {
+    selector = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -542,7 +542,7 @@ resource "kubernetes_replication_controller" "test" {
   spec {
     replicas = 1000 # This is intentionally high to exercise the waiter
 
-    selector {
+    selector = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -587,7 +587,7 @@ resource "kubernetes_replication_controller" "test" {
 
         volume {
           name      = "workdir"
-          empty_dir = {}
+          empty_dir {}
         }
       }
     }
@@ -614,7 +614,7 @@ resource "kubernetes_replication_controller" "test" {
   }
 
   spec {
-    selector {
+    selector = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -659,7 +659,7 @@ resource "kubernetes_replication_controller" "test" {
   }
 
   spec {
-    selector {
+    selector = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -698,7 +698,7 @@ resource "kubernetes_replication_controller" "test" {
   }
 
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
 
@@ -740,7 +740,7 @@ resource "kubernetes_replication_controller" "test" {
   }
 
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
 
@@ -785,7 +785,7 @@ resource "kubernetes_replication_controller" "test" {
   }
 
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
 
@@ -836,7 +836,7 @@ resource "kubernetes_replication_controller" "test" {
   }
 
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
 
@@ -881,7 +881,7 @@ resource "kubernetes_replication_controller" "test" {
   }
 
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
 
@@ -931,7 +931,7 @@ resource "kubernetes_replication_controller" "test" {
   }
 
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
 
@@ -970,7 +970,7 @@ resource "kubernetes_secret" "test" {
     name = "%s"
   }
 
-  data {
+  data = {
     one = "first"
   }
 }
@@ -985,7 +985,7 @@ resource "kubernetes_replication_controller" "test" {
   }
 
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
 
@@ -1010,7 +1010,7 @@ resource "kubernetes_replication_controller" "test" {
         volume {
           name = "db"
 
-          secret = {
+          secret {
             secret_name = "${kubernetes_secret.test.metadata.0.name}"
           }
         }
@@ -1033,7 +1033,7 @@ resource "kubernetes_replication_controller" "test" {
   }
 
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
 
@@ -1055,7 +1055,7 @@ resource "kubernetes_replication_controller" "test" {
               memory = "512Mi"
             }
 
-            requests = {
+            requests {
               cpu    = "250m"
               memory = "50Mi"
             }
@@ -1080,7 +1080,7 @@ resource "kubernetes_replication_controller" "test" {
   }
 
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
 
@@ -1105,7 +1105,7 @@ resource "kubernetes_replication_controller" "test" {
         volume {
           name = "cache-volume"
 
-          empty_dir = {
+          empty_dir {
             medium = "Memory"
           }
         }

@@ -433,7 +433,7 @@ resource "kubernetes_replication_controller" "test" {
   spec {
     replicas = 1000 # This is intentionally high to exercise the waiter
 
-    selector {
+    selector = {
       TestLabelOne   = "one"
       TestLabelTwo   = "two"
       TestLabelThree = "three"
@@ -467,7 +467,7 @@ resource "kubernetes_replication_controller" "test" {
 	}
 	spec {
 		replicas = 1000 # This is intentionally high to exercise the waiter
-		selector {
+		selector = {
 			TestLabelOne = "one"
 			TestLabelTwo = "two"
 			TestLabelThree = "three"
@@ -518,7 +518,7 @@ resource "kubernetes_replication_controller" "test" {
     name = "%s"
   }
   spec {
-    selector {
+    selector = {
       TestLabelOne = "one"
       TestLabelTwo = "two"
       TestLabelThree = "three"
@@ -545,7 +545,7 @@ resource "kubernetes_replication_controller" "test" {
     generate_name = "%s"
   }
   spec {
-    selector {
+    selector = {
       TestLabelOne = "one"
       TestLabelTwo = "two"
       TestLabelThree = "three"
@@ -570,7 +570,7 @@ resource "kubernetes_replication_controller" "test" {
     }
   }
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
     template {
@@ -600,7 +600,7 @@ resource "kubernetes_replication_controller" "test" {
     }
   }
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
     template {
@@ -634,7 +634,7 @@ resource "kubernetes_replication_controller" "test" {
     }
   }
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
     template {
@@ -673,7 +673,7 @@ resource "kubernetes_replication_controller" "test" {
     }
   }
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
     template {
@@ -707,7 +707,7 @@ resource "kubernetes_replication_controller" "test" {
     }
   }
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
     template {
@@ -746,7 +746,7 @@ resource "kubernetes_replication_controller" "test" {
     }
   }
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
     template {
@@ -777,7 +777,7 @@ resource "kubernetes_secret" "test" {
     name = "%s"
   }
 
-  data {
+  data = {
     one = "first"
   }
 }
@@ -791,7 +791,7 @@ resource "kubernetes_replication_controller" "test" {
   }
 
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
   	template {
@@ -805,7 +805,7 @@ resource "kubernetes_replication_controller" "test" {
       }
       volume {
         name = "db"
-        secret = {
+        secret {
           secret_name = "${kubernetes_secret.test.metadata.0.name}"
         }
       }
@@ -826,7 +826,7 @@ resource "kubernetes_replication_controller" "test" {
   }
 
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
   	template {
@@ -862,7 +862,7 @@ resource "kubernetes_replication_controller" "test" {
   }
 
   spec {
-    selector {
+    selector = {
       Test = "TfAcceptanceTest"
     }
     template {
@@ -876,7 +876,7 @@ resource "kubernetes_replication_controller" "test" {
       }
       volume {
         name = "cache-volume"
-        empty_dir = {
+        empty_dir {
           medium = "Memory"
         }
       }

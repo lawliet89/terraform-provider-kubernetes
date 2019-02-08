@@ -265,7 +265,7 @@ resource "kubernetes_resource_quota" "test" {
   }
 
   spec {
-    hard {
+    hard = {
       "limits.cpu"    = 2
       "limits.memory" = "2Gi"
       pods            = 4
@@ -294,7 +294,7 @@ resource "kubernetes_resource_quota" "test" {
   }
 
   spec {
-    hard {
+    hard = {
       "limits.cpu"    = 2
       "limits.memory" = "2Gi"
       pods            = 4
@@ -312,7 +312,7 @@ resource "kubernetes_resource_quota" "test" {
   }
 
   spec {
-    hard {
+    hard = {
       "limits.cpu"    = 4
       "requests.cpu"  = 1
       "limits.memory" = "4Gi"
@@ -331,7 +331,7 @@ resource "kubernetes_resource_quota" "test" {
   }
 
   spec {
-    hard {
+    hard = {
       pods = 10
     }
   }
@@ -347,7 +347,7 @@ resource "kubernetes_resource_quota" "test" {
   }
 
   spec {
-    hard {
+    hard = {
       pods = 10
     }
 
@@ -365,7 +365,7 @@ resource "kubernetes_resource_quota" "test" {
   }
 
   spec {
-    hard {
+    hard = {
       pods = 10
     }
 

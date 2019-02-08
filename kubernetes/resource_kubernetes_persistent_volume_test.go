@@ -993,11 +993,11 @@ func testAccKubernetesPersistentVolumeConfig_hostPath_nodeAffinity_match(name, s
     node_affinity {
       required {
         node_selector_term {
-          match_expressions = [{
+          match_expressions {
             key = "%s"
             operator = "In"
             values = ["%s"]
-          }]
+          }
         }
       }
     }

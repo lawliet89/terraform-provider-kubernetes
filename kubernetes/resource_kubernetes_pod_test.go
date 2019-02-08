@@ -478,8 +478,7 @@ func TestAccKubernetesPod_with_cfg_map_volume_mount(t *testing.T) {
 					resource.TestCheckResourceAttr("kubernetes_pod.test", "spec.0.container.0.volume_mount.0.sub_path", ""),
 					resource.TestCheckResourceAttr("kubernetes_pod.test", "spec.0.volume.0.name", "cfg"),
 					resource.TestCheckResourceAttr("kubernetes_pod.test", "spec.0.volume.0.config_map.0.name", cfgMap),
-					resource.TestCheckResourceAttr("kubernetes_pod.test", "spec.0.volume.0.config_map.0.default_mode", "511"), // 0777 in decimal
-				),
+					resource.TestCheckResourceAttr("kubernetes_pod.test", "spec.0.volume.0.config_map.0.default_mode", "0777")),
 			},
 		},
 	})
@@ -658,7 +657,7 @@ resource "kubernetes_secret" "test" {
     name = "%s"
   }
 
-  data {
+  data = {
     one = "first"
   }
 }
@@ -668,7 +667,7 @@ resource "kubernetes_secret" "test_from" {
     name = "%s-from"
   }
 
-  data {
+  data = {
     one    = "first_from"
     second = "second_from"
   }
@@ -679,7 +678,7 @@ resource "kubernetes_config_map" "test" {
     name = "%s"
   }
 
-  data {
+  data = {
     one = "ONE"
   }
 }
@@ -689,7 +688,7 @@ resource "kubernetes_config_map" "test_from" {
     name = "%s-from"
   }
 
-  data {
+  data = {
     one = "ONE_FROM"
     two = "TWO_FROM"
   }
@@ -709,7 +708,7 @@ resource "kubernetes_pod" "test" {
       image = "%s"
       name  = "containername"
 
-      env = [{
+      env {
         name = "EXPORTED_VARIBALE_FROM_SECRET"
 
         value_from {
@@ -718,42 +717,37 @@ resource "kubernetes_pod" "test" {
             key  = "one"
           }
         }
-      },
-        {
-          name = "EXPORTED_VARIBALE_FROM_CONFIG_MAP"
+      }
+      env {
+        name = "EXPORTED_VARIBALE_FROM_CONFIG_MAP"
+				value_from {
+					config_map_key_ref {
+						name = "${kubernetes_config_map.test.metadata.0.name}"
+						key  = "one"
+					}
+				}
+			}
 
-          value_from {
-            config_map_key_ref {
-              name = "${kubernetes_config_map.test.metadata.0.name}"
-              key  = "one"
-            }
-          }
-        },
-      ]
-
-      env_from = [{
+      env_from {
         config_map_ref {
           name     = "${kubernetes_config_map.test_from.metadata.0.name}"
           optional = true
         }
-
         prefix = "FROM_CM_"
-      },
-        {
-          secret_ref {
-            name     = "${kubernetes_secret.test_from.metadata.0.name}"
-            optional = false
-          }
-
-          prefix = "FROM_S_"
-        },
-      ]
+			}
+      env_from {
+				secret_ref {
+					name     = "${kubernetes_secret.test_from.metadata.0.name}"
+					optional = false
+				}
+				prefix = "FROM_S_"
+			}
     }
 
     volume {
       name = "db"
 
-      secret = {
+      secret {
         secret_name = "${kubernetes_secret.test.metadata.0.name}"
       }
     }
@@ -803,7 +797,7 @@ resource "kubernetes_pod" "test" {
 
     volume {
       name      = "workdir"
-      empty_dir = {}
+      empty_dir {}
     }
   }
 }
@@ -1014,7 +1008,7 @@ resource "kubernetes_secret" "test" {
     name = "%s"
   }
 
-  data {
+  data = {
     one = "first"
   }
 }
@@ -1058,7 +1052,7 @@ resource "kubernetes_secret" "test" {
     name = "%s"
   }
 
-  data {
+  data = {
     one = "first"
   }
 }
@@ -1107,7 +1101,7 @@ resource "kubernetes_config_map" "test" {
     name = "%s"
   }
 
-  data {
+  data = {
     one = "first"
   }
 }
@@ -1137,7 +1131,7 @@ resource "kubernetes_pod" "test" {
 
       config_map {
         name         = "${kubernetes_config_map.test.metadata.0.name}"
-        default_mode = 0777
+        default_mode = "0777"
       }
     }
 
@@ -1194,7 +1188,7 @@ resource "kubernetes_pod" "test" {
           memory = "512Mi"
         }
 
-        requests = {
+        requests {
           cpu    = "250m"
           memory = "50Mi"
         }
@@ -1230,7 +1224,7 @@ resource "kubernetes_pod" "test" {
     volume {
       name = "cache-volume"
 
-      empty_dir = {
+      empty_dir {
         medium = "Memory"
       }
     }

@@ -454,7 +454,7 @@ resource "kubernetes_secret" "test" {
   }
 
   data = {
-    one = "${file("./test-fixtures/binary.data")}"
+    one = "${base64decode(filebase64("./test-fixtures/binary.data"))}"
   }
 }
 `, prefix)
@@ -468,8 +468,8 @@ resource "kubernetes_secret" "test" {
   }
 
   data = {
-    one = "${file("./test-fixtures/binary2.data")}"
-    two = "${file("./test-fixtures/binary.data")}"
+    one = "${base64decode(filebase64("./test-fixtures/binary2.data"))}"
+    two = "${base64decode(filebase64("./test-fixtures/binary.data"))}"
   }
 }
 `, prefix)
