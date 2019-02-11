@@ -70,7 +70,7 @@ require (
 	github.com/pquerna/otp v1.1.0 // indirect
 	github.com/prometheus/client_model v0.0.0-20190129233127-fd36f4220a90 // indirect
 	github.com/prometheus/common v0.2.0 // indirect
-	github.com/prometheus/procfs v0.0.0-20190208162519-de1b801bf34b // indirect
+	github.com/prometheus/procfs v0.0.0-20190209105433-f8d8b3f739bd // indirect
 	github.com/russross/blackfriday v2.0.0+incompatible // indirect
 	github.com/satori/go.uuid v1.2.0 // indirect
 	github.com/shurcooL/go v0.0.0-20190121191506-3fef8c783dec // indirect
@@ -109,7 +109,7 @@ require (
 	golang.org/x/net v0.0.0-20190206173232-65e2d4e15006 // indirect
 	golang.org/x/oauth2 v0.0.0-20190130055435-99b60b757ec1 // indirect
 	golang.org/x/perf v0.0.0-20190124201629-844a5f5b46f4 // indirect
-	golang.org/x/sys v0.0.0-20190204203706-41f3e6584952 // indirect
+	golang.org/x/sys v0.0.0-20190209173611-3b5209105503 // indirect
 	golang.org/x/tools v0.0.0-20190208222737-3744606dbb67 // indirect
 	google.golang.org/grpc v1.18.0 // indirect
 	gopkg.in/VividCortex/ewma.v1 v1.1.1 // indirect
@@ -120,7 +120,7 @@ require (
 	gopkg.in/mattn/go-runewidth.v0 v0.0.3 // indirect
 	honnef.co/go/tools v0.0.0-20190128043916-71123fcbb8fe // indirect
 	k8s.io/api v0.0.0-20181221193117-173ce66c1e39
-	k8s.io/apimachinery v0.0.0-20190208171202-bf20fabcb825
+	k8s.io/apimachinery v0.0.0-20190210215030-4521e64aecd3
 	k8s.io/client-go v10.0.0+incompatible
 	sigs.k8s.io/structured-merge-diff v0.0.0-20190130003954-e5e029740eb8 // indirect
 	sourcegraph.com/sqs/pbtypes v1.0.0 // indirect
